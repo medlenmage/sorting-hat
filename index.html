@@ -17,9 +17,10 @@
   <p>This is our wonderful portal to our sorting hat!</p>
   <a class="btn btn-primary btn-lg" href="#" role="button" id="sortingHat" onclick="hatFunction()" >Let's sort you out</a>
 </div>
-
-<form class="form-inline" id="myHat">
+<div class="myForm" id="myHat">
   <h3>First Year's Name</h3>
+    <form class="form-inline" onsubmit="return addStudent()">
+  
   <div class="form-group mb-2">
     <label for="staticEmail2" class="sr-only">Student</label>
     <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="">
@@ -27,10 +28,12 @@
   <p>Student:</p>
   <div class="form-group mx-sm-3 mb-2">
     <label for="inputPassword2" class="sr-only">Password</label>
-    <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+    <input class="form-control" id="inputPassword2" placeholder="Wizard or Witch" id="studentName">
   </div>
-  <button type="submit" class="btn btn-primary mb-2">Confirm identity</button>
+  <button type="submit" class="btn btn-primary mb-2" id="subitStudent">Sort Me</button>
 </form>
+
+</div>
 
 <script src="main.js"></script>
 </body>
