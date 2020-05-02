@@ -1,4 +1,4 @@
-const student = []
+
 
 
 const housees = [
@@ -16,27 +16,66 @@ const housees = [
   }
 ]
 
+const student = [];
+
 const addStudent = () => {
-  boxvalue = document.getElementById('studentName').Value;
-  student.push(boxvalue)
-  console.log(student)
-  document.getElementById('#submitStudent').addEventListener("click", addstudent)
-  return false
+  const boxvalue = {
+    name: document.getElementById('submitStudent').value,
+    house: randomHouse()
+  }
+  student.push(boxvalue);
+  console.log(student);
+  sortStudent(student);
+  return false;
+}
+
+const randomHouse = () => {
+  return housees[Math.floor(Math.random() * 4)].house
 }
 
 
 
-// const clickEvents = () => {
-//   document.getElementById('#submitStudent').addEventListener("click", addstudent)
-// }
+
+const printToDom = (selector, textToPrint) => {
+  const selectedDiv = document.querySelector(selector);
+  selectedDiv.innerHTML = textToPrint;
+}
 
 
+
+
+const sortStudent = (student) => {
+  domString = '';
+
+  for (let i = 0; i < student.length; i++) {
+    domString += `
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">${student[i].name}</h5>
+          <p class="card-text">Welcome to ${student[i].house}!</p>
+          <a href="#" class="card-link">expel</a>
+        </div>
+      </div>
+    `
+  }
+  printToDom('#sortedStudent', domString)
+}
+
+
+const sortStudentEvent = (e) => {
+  const buttonId = e.target.id;
+
+  if (buttonId === 'sortMe') {
+    sortStudent(student)
+    return;
+  }
+}
 
 
 
 
 function hatFunction() {
-  var hatForm = document.getElementById("myHat");
+  const hatForm = document.getElementById("myHat");
   if (hatForm.style.visibility === "visible") {
     hatForm.style.visibility = "hidden";
   } else {
@@ -45,6 +84,15 @@ function hatFunction() {
 }
 
 
-const init = () => {
-  clickEvents()
+const clickEvents = () => {
+  document.querySelector('#sortMe').addEventListener('click', addStudent);
 }
+
+
+const init = () => {
+  clickEvents();
+  sortStudent(student);
+
+}
+
+init();
