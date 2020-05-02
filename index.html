@@ -19,22 +19,23 @@
 </div>
 <div class="myForm" id="myHat">
   <h3>First Year's Name</h3>
-    <form class="form-inline" onsubmit="return addStudent()">
+    <form class="form-inline">
   
   <div class="form-group mb-2">
     <label for="staticEmail2" class="sr-only">Student</label>
-    <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="">
+    <input type="text" readonly class="form-control-plaintext" id="staticEmail2">
   </div>
   <p>Student:</p>
   <div class="form-group mx-sm-3 mb-2">
     <label for="inputPassword2" class="sr-only">Password</label>
-    <input class="form-control" id="inputPassword2" placeholder="Wizard or Witch" id="studentName">
+    <input  class="form-control" id="submitStudent" placeholder="Wizard or Witch">
   </div>
-  <button type="submit" class="btn btn-primary mb-2" id="subitStudent">Sort Me</button>
+  <button type="submit" class="btn btn-primary mb-2" id="sortMe">Sort Me</button>
 </form>
-
 </div>
 
-<script src="main.js"></script>
+<div id="sortedStudent" class="d-flex flex-wrap justify-content-start"></div>
+
+<script src="./main.js"></script>
 </body>
 </html>
