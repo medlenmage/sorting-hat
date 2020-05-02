@@ -1,4 +1,4 @@
-
+let domString = '';
 
 
 const housees = [
@@ -18,10 +18,16 @@ const housees = [
 
 const student = [];
 
+const army = [];
+
+const armyCards = [];
+
+const studentCards = [];
+
 const addStudent = () => {
   const boxvalue = {
     name: document.getElementById('submitStudent').value,
-    house: randomHouse()
+    house: randomHouse(),
   }
   student.push(boxvalue);
   console.log(student);
@@ -46,18 +52,22 @@ const printToDom = (selector, textToPrint) => {
 
 const sortStudent = (student) => {
   domString = '';
+  cardString = '';
 
   for (let i = 0; i < student.length; i++) {
-    domString += `
-    <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">${student[i].name}</h5>
-          <p class="card-text">Welcome to ${student[i].house}!</p>
-          <a href="#" class="card-link">expel</a>
-        </div>
+    cardString = `
+    <div class="card" style="width: 18rem;" id="${[i]}">
+      <img class="card-img-top" src="..." alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">${student[i].name}</h5>
+        <p class="card-text">Welcome to ${student[i].house}</p>
+        <a href="#" class="btn btn-primary" id="bye-bye" onclick="expelStudent('${[i]}')">Expel</a>
       </div>
+    </div>
     `
+    domString += cardString
   }
+  studentCards.push(cardString)
   printToDom('#sortedStudent', domString)
 }
 
@@ -84,9 +94,32 @@ function hatFunction() {
 }
 
 
+const expelStudent = (getOutHere) => {
+  army.push(student[getOutHere])
+  student.splice(getOutHere)
+  armyCards.push(studentCards[getOutHere])
+  studentCards.splice(getOutHere)
+  army[army.length -1].house = "Voldemort's Army"
+  domString = domString.replace(armyCards[armyCards.length -1], '')
+  printToDom('#sortedStudent', domString)
+}
+
+
+
+
+
+
 const clickEvents = () => {
   document.querySelector('#sortMe').addEventListener('click', addStudent);
+  document.querySelector('#bye-bye').addEventListener('click', expelStudent);
 }
+
+
+
+
+
+
+
 
 
 const init = () => {
