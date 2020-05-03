@@ -61,13 +61,14 @@ const sortStudent = (student) => {
       <div class="card-body">
         <h5 class="card-title">${student[i].name}</h5>
         <p class="card-text">Welcome to ${student[i].house}</p>
-        <a href="#" class="btn btn-primary" id="bye-bye" >Expel</a>
+        <a href="#" class="btn btn-primary" id="bye-bye${[i]}" onclick="expelStudent(${[i]})">Expel</a>
       </div>
     </div>
     `
     domString += cardString
+    studentCards.push(cardString)
   }
-  studentCards.push(cardString)
+  // studentCards.push(cardString)
   printToDom('#sortedStudent', domString)
 }
 
@@ -102,10 +103,10 @@ const expelStudent = (getOutHere) => {
   console.log(army)
   army[army.length -1].house = "Voldemort's Army"
   domString = domString.replace(armyCards[armyCards.length -1], '')
-  domString += armyCards[armyCards.length -1]
+  // domString += armyCards[armyCards.length -1]
   printToDom('#sortedStudent', domString)
+  sortStudent(student);
 }
-
 
 
 
@@ -113,7 +114,6 @@ const expelStudent = (getOutHere) => {
 
 const clickEvents = () => {
   document.querySelector('#sortMe').addEventListener('click', addStudent);
-  document.querySelector('#bye-bye').addEventListener('click', expelStudent(this.id))
 }
 
 
