@@ -61,7 +61,7 @@ const sortStudent = (student) => {
       <div class="card-body">
         <h5 class="card-title">${student[i].name}</h5>
         <p class="card-text">Welcome to ${student[i].house}</p>
-        <a href="#" class="btn btn-primary" id="bye-bye${[i]}" onclick="expelStudent(${[i]})">Expel</a>
+        <a href="#" class="btn btn-primary" id="bye-bye${[i]}" onclick="${expelStudent(([i])}`">Expel</a>
       </div>
     </div>
     `
