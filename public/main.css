@@ -1,0 +1,22 @@
+.myForm {
+  visibility: hidden;
+  width: 750px;
+  height: 200px;
+  margin: auto;
+  border: 2px solid black;
+  display: block;
+}
+
+#sortedStudent {
+  width: 80%;
+  margin: auto;
+}
+
+.card {
+  width: 30%;
+  margin: 10px;
+}
+
+.card-text {
+  font-weight: bold;
+}
