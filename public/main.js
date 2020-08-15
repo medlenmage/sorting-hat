@@ -61,7 +61,7 @@ const sortStudent = (student) => {
       <div class="card-body">
         <h5 class="card-title">${student[i].name}</h5>
         <p class="card-text">Welcome to ${student[i].house}</p>`
-    cardString += `<a href="#" class="btn btn-primary" id="bye-bye${[i]}" onclick="`${expelStudent(([i])}`>Expel</a>
+    cardString += `<a href="#" class="btn btn-primary" id="bye-bye${[i]}" onclick=${[i]} onclick="expelStudent(${[i]})">Expel</a>
       </div>
     </div>
     `
@@ -85,7 +85,7 @@ const sortStudentEvent = (e) => {
 
 
 
-function hatFunction() {
+const hatFunction = () => {
   const hatForm = document.getElementById("myHat");
   if (hatForm.style.visibility === "visible") {
     hatForm.style.visibility = "hidden";
@@ -114,6 +114,7 @@ const expelStudent = (getOutHere) => {
 
 const clickEvents = () => {
   document.querySelector('#sortMe').addEventListener('click', addStudent);
+  $('body').on('click', '#sortinghat', hatFunction);
 }
 
 
