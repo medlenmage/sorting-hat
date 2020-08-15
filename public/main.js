@@ -114,7 +114,7 @@ const expelStudent = (getOutHere) => {
 
 const clickEvents = () => {
   document.querySelector('#sortMe').addEventListener('click', addStudent);
-  $('body').on('click', '#sortinghat', hatFunction);
+  document.querySelector('#sortingHat').addEventListener('click', hatFunction);
 }
 
 
