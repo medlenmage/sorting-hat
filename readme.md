@@ -23,11 +23,11 @@ This is a page designed to utilize javascript to hide a form that appears after 
 * [Joshua Medlen](https://github.com/medlenmage)
 
 ## To-Do
-- [] Build a banner statement with a button that controls the visibilty of the form
-- [] build a form and style it in a way that it hides and appears from the click of the button on the banner
-- [] build a function that accepts the data from the input on the form
-- [] build a loop function that builds a card from the new pushed data in the array and prints a card to the dom with an expel button
-- [] have the expel button work in a way which it removes the student from the array and then removes the card from the page/dom
+- [ ] Build a banner statement with a button that controls the visibilty of the form
+- [ ] build a form and style it in a way that it hides and appears from the click of the button on the banner
+- [ ] build a function that accepts the data from the input on the form
+- [ ] build a loop function that builds a card from the new pushed data in the array and prints a card to the dom with an expel button
+- [ ] have the expel button work in a way which it removes the student from the array and then removes the card from the page/dom
 ---
 
 ## Code Example
